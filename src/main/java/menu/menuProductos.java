@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.mitienda.spring.controllers.FacturaController;
+import com.mitienda.spring.controllers.CategoryController;
 import com.mitienda.spring.controllers.ProductController;
-
+/*
 import src.models.Categoria;
 import src.models.Producto;
 import src.models.comun.DbObject;
-
+*/
 public class menuProductos {
 
 	private boolean salir;
@@ -18,6 +18,7 @@ public class menuProductos {
 
 
 	ProductController ctrl = ProductController.getInstance();
+	CategoryController ctrl1 = CategoryController.getInstance();
 	public Scanner keyboard = new Scanner(System.in);
 	List<com.mitienda.spring.models.Producto> productosLista = new ArrayList<>();
 	List<com.mitienda.spring.models.Categoria> categoriasLista = new ArrayList<>();
@@ -74,7 +75,7 @@ public class menuProductos {
 		pro.setNombre(productoNuevo);
 
 		com.mitienda.spring.models.Categoria cat = new com.mitienda.spring.models.Categoria();
-		categoriasLista = ctrl.list();
+		categoriasLista = ctrl1.list();
 		for (int i = 0; i < categoriasLista.size(); i++) {
 			System.out.println(categoriasLista.get(i).getId() + " " + categoriasLista.get(i));
 		}
@@ -91,7 +92,7 @@ public class menuProductos {
 		pro.setStock(Integer.parseInt(stcokproducto));
 
 ctrl.save(pro);
-		System.out.println("Listo, el apso de introducir una categoria realizado");
+		System.out.println("Listo, el apso de introducir un prodcuto realizado");
 
 	}
 
@@ -152,7 +153,7 @@ ctrl.save(pro);
 			prd.setNombre(nombre);
 			
 			com.mitienda.spring.models.Categoria cat = new com.mitienda.spring.models.Categoria();
-			categoriasLista = ctrl.list();
+			categoriasLista = ctrl1.list();
 			for (int i = 0; i < categoriasLista.size(); i++) {
 				System.out.println(categoriasLista.get(i).getId() + " " + categoriasLista.get(i));
 			}

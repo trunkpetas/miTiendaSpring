@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.mitienda.spring.controllers.ClientesController;
 import com.mitienda.spring.controllers.FacturaController;
 import com.mitienda.spring.controllers.FacturaLineaController;
 import com.mitienda.spring.models.Factura;
@@ -19,6 +18,7 @@ public class menuFactura_lineas {
 	private int opcion;
 
 	FacturaLineaController ctrl = FacturaLineaController.getInstance();
+	FacturaController ctrl1 = FacturaController.getInstance();
 	public Scanner keyboard = new Scanner(System.in);
 	List<FacturaLinea> facturaLineaLista = new ArrayList<>();
 	List<Factura> facturasLista = new ArrayList<>();
@@ -68,13 +68,13 @@ public class menuFactura_lineas {
 
 	public void crearFacturaLinea() {
 		FacturaLinea fl = new FacturaLinea();
-		System.out.println("Teclee el nombre de la neuva lineafac :");
+		System.out.println("Teclee el nombre de la nueva lineafac :");
 		String factuflNombre = keyboard.nextLine();
 		fl.setNombre(factuflNombre);
 		
 		
 		Factura fc = new Factura();
-		facturasLista = ctrl.list();
+		facturasLista = ctrl1.list();
 		for (int i = 0; i < facturasLista.size(); i++) {
 			System.out.println(facturasLista.get(i).getId() + " " + facturasLista.get(i));
 		}
@@ -89,7 +89,7 @@ public class menuFactura_lineas {
 		fl.setPrecio(Integer.parseInt(factuprecio));
 		
 		ctrl.save(fl);
-		System.out.println("Listo, el apso de introducir una categoria realizado");
+		System.out.println("Listo, el apso de introducir una nueva Factura_linea realizado");
 
 	}
 

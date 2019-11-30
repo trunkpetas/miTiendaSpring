@@ -76,7 +76,7 @@ public class menuClientes {
 		System.out.println("Teclee la direccion del neuvo cliente :");
 		String direccionClietne = keyboard.nextLine();
 		cl.setDireccion(direccionClietne);
-		System.out.println("Teclee el dni del nuevo clkiente :");
+		System.out.println("Teclee el dni del nuevo cliente :");
 		String dni = keyboard.nextLine();
 		cl.setDni(dni);
 		System.out.println("Teclee el email del clente");
@@ -90,7 +90,7 @@ public class menuClientes {
 		// cl.set
 
 		ctrl.save(cl);
-		System.out.println("Listo, el apso de introducir un cliente realizado");
+		System.out.println("Listo, el paso de introducir un cliente realizado");
 
 	}
 

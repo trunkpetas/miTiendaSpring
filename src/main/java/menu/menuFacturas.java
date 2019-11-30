@@ -98,7 +98,7 @@ public class menuFacturas {
 		fc.setSerie(Integer.parseInt(serie));
 
 		ctrl.save(fc);
-		System.out.println("Listo, el apso de introducir una categoria realizado");
+		System.out.println("Listo, el apso de introducir una factura realizado");
 
 	}
 
