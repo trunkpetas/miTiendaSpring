@@ -24,7 +24,7 @@ public class menuFacturas {
 	private boolean salir;
 	private int opcion;
 
-	public Scanner keyboard = new Scanner(System.in);
+	public Scanner keyboard = new Scanner(System.in);  
 	List<Factura> facturasLista = new ArrayList<>();
 	FacturaController ctrl = FacturaController.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -76,7 +76,7 @@ public class menuFacturas {
 	}
 
 	public void crearFac() throws ParseException {
-		com.mitienda.spring.models.Factura fc = new com.mitienda.spring.models.Factura();
+		Factura fc = new Factura();
 		System.out.println("Teclee la fecha de la neuva factura dd/MM/yyyy :");
 		String fecha = keyboard.nextLine();
 		//fc.setFecha(sdf.parse(fecha));
