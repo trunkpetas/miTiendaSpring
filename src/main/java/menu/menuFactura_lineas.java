@@ -27,7 +27,7 @@ public class menuFactura_lineas {
 
 	}
 
-	public void display() {
+	public void iniciando() {
 
 		Scanner keyboard = new Scanner(System.in);
 		do {

@@ -34,7 +34,7 @@ public class menuFacturas {
 
 	}
 
-	public void display() throws ParseException {
+	public void iniciando() throws ParseException {
 
 		Scanner keyboard = new Scanner(System.in);
 		do {

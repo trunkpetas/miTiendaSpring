@@ -27,7 +27,7 @@ public class menuProductos {
 
 	}
 
-	public void display() {
+	public void iniciando() {
 
 		Scanner keyboard = new Scanner(System.in);
 		do {

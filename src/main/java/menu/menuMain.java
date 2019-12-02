@@ -5,15 +5,15 @@ import java.util.Scanner;
 
 public class menuMain {
 
-	private boolean salir;
-	private int opcion;
+	
 
 	public menuMain() {
 
 	}
 
-	public void display() throws ParseException {
-
+	public static void  iniciando() throws ParseException{
+		 boolean salir;
+		int opcion;
 		Scanner keyboard = new Scanner(System.in);
 		
 		//if(opcion ==)
@@ -35,23 +35,23 @@ public class menuMain {
 			
 			case 1:
 				System.out.println("Productos\n");// productos();
-				mP.display();
+				mP.iniciando();
 				break;
 			case 2:
 				System.out.println("Cosa 1\n");// clientes();
-				mCl.display();
+				mCl.iniciando();
 				break;
 			case 3:
 				System.out.println("Cosa 3\n");// categorias();
-				mC.display();
+				mC.iniciando();
 				break;
 			case 4:
 				System.out.println("Cosa 4\n");// facturas();
-				mF.display();
+				mF.iniciando();
 				break;
 			case 5:
 				System.out.println("Cosa 5\n");// facturas();
-				mfl.display();
+				mfl.iniciando();
 				break;
 				
 			case 6:
