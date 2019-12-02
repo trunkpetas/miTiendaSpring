@@ -38,19 +38,19 @@ public class menuMain {
 				mP.iniciando();
 				break;
 			case 2:
-				System.out.println("Cosa 1\n");// clientes();
+				System.out.println("Clientes\n");// clientes();
 				mCl.iniciando();
 				break;
 			case 3:
-				System.out.println("Cosa 3\n");// categorias();
+				System.out.println("Categorias\n");// categorias();
 				mC.iniciando();
 				break;
 			case 4:
-				System.out.println("Cosa 4\n");// facturas();
+				System.out.println("Facturas\n");// facturas();
 				mF.iniciando();
 				break;
 			case 5:
-				System.out.println("Cosa 5\n");// facturas();
+				System.out.println("Factura_Linea\n");// facturas();
 				mfl.iniciando();
 				break;
 				
