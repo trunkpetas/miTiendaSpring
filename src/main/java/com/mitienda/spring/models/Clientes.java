@@ -22,6 +22,11 @@ public class Clientes {
 	private void setId(Integer id) {
 		this.id = id;
 	}
+	
+	private int getId(){
+		return id;
+		
+	}
 
 	public Date getCreated() {
 		return created;
