@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.mitienda.spring.controllers.CategoryController;
 import com.mitienda.spring.controllers.ClientesController;
+import com.mitienda.spring.models.Clientes;
 /*
 import src.models.Categoria;
 import src.models.Clientes;
@@ -19,7 +20,7 @@ public class menuClientes {
 	private int opcion;
 	ClientesController ctrl = ClientesController.getInstance();
 
-	List<com.mitienda.spring.models.Clientes> clientesLista = new ArrayList<>();
+	List<Clientes> clientesLista = new ArrayList<>();
 
 	public Scanner keyboard = new Scanner(System.in);
 	
@@ -69,7 +70,7 @@ public class menuClientes {
 	}
 
 	public void crearClioente() {
-		com.mitienda.spring.models.Clientes cl = new com.mitienda.spring.models.Clientes();
+		Clientes cl = new Clientes();
 		System.out.println("Teclee el nombre del nuevo cliente :");
 		String nombreCliente = keyboard.nextLine();
 		cl.setNombre(nombreCliente);
@@ -96,7 +97,7 @@ public class menuClientes {
 
 	public void readcl() {
 
-		com.mitienda.spring.models.Clientes cl = new com.mitienda.spring.models.Clientes();
+		Clientes cl = new Clientes();
 		clientesLista = ctrl.list();
 		if (clientesLista.isEmpty()) {
 			System.out.println("Lista vac�a no tengo nada que leer espabila");
@@ -115,7 +116,7 @@ public class menuClientes {
 		if (clientesLista.isEmpty()) {
 			System.out.println("Lista vac�a no tengo nada que actualizar espabila");
 		} else {
-			com.mitienda.spring.models.Clientes cl = new com.mitienda.spring.models.Clientes();
+			Clientes cl = new Clientes();
 			String updateNombre;
 
 			System.out.println("que quieres actualizar capullo");
@@ -129,7 +130,7 @@ public class menuClientes {
 			updateNombre = keyboard.nextLine();
 			// cl = (Clientes)cl.getByid(Integer.parseInt(updateNombre));
 
-			cl = (com.mitienda.spring.models.Clientes) clientesLista.get(Integer.parseInt(updateNombre));
+			cl = (Clientes) clientesLista.get(Integer.parseInt(updateNombre));
 			String nombre;
 			System.out.println("introduce el nuevo nombre");
 			nombre = keyboard.nextLine();
@@ -163,7 +164,7 @@ public class menuClientes {
 			System.out.println("Lista vac�a no tengo nada que borrar espabila");
 		} else {
 
-			com.mitienda.spring.models.Clientes cl = new com.mitienda.spring.models.Clientes();
+			Clientes cl = new Clientes();
 			String deleteando;
 			System.out.println("que quieres borrar ");
 			clientesLista = ctrl.list();

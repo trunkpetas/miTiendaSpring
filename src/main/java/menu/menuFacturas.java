@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 import com.mitienda.spring.controllers.FacturaController;
 import com.mitienda.spring.controllers.FacturaLineaController;
+import com.mitienda.spring.models.Clientes;
 import com.mitienda.spring.models.Factura;
 import com.mitienda.spring.models.FacturaLinea;
 /*
@@ -28,7 +29,7 @@ public class menuFacturas {
 	FacturaController ctrl = FacturaController.getInstance();
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-	List<com.mitienda.spring.models.Clientes> clientesLista = new ArrayList<>();
+	List<Clientes> clientesLista = new ArrayList<>();
 
 	public menuFacturas() {
 
@@ -80,7 +81,7 @@ public class menuFacturas {
 		String fecha = keyboard.nextLine();
 		//fc.setFecha(sdf.parse(fecha));
 		fc.setFecha(null);
-		com.mitienda.spring.models.Clientes cl = new com.mitienda.spring.models.Clientes();
+		Clientes cl = new Clientes();
 
 		facturasLista = ctrl.list();
 		for (int i = 0; i < clientesLista.size(); i++) {
@@ -103,7 +104,7 @@ public class menuFacturas {
 	}
 
 	public void readFac() {
-		com.mitienda.spring.models.Factura fl = new com.mitienda.spring.models.Factura();
+		Factura fl = new Factura();
 		facturasLista = ctrl.list();
 		if (facturasLista.isEmpty()) {
 			System.out.println("Lista vac�a no tengo nada que leer espabila");
@@ -119,7 +120,7 @@ public class menuFacturas {
 	}
 
 	public void actualizaFac() throws ParseException {
-		com.mitienda.spring.models.Factura fc= new com.mitienda.spring.models.Factura();
+		Factura fc= new Factura();
 		facturasLista = ctrl.list();
 		fc = null;
 		if (facturasLista.isEmpty()) {
@@ -137,8 +138,8 @@ public class menuFacturas {
 			updateNombre = keyboard.nextLine();
 			// fc = (Factura)fc.getByid(Integer.parseInt(updateNombre));
 
-			for (com.mitienda.spring.models.Factura dbObject : facturasLista) {
-				com.mitienda.spring.models.Factura f = (com.mitienda.spring.models.Factura) dbObject;
+			for (Factura dbObject : facturasLista) {
+				Factura f = (Factura) dbObject;
 				if (f.getId().equals(Integer.parseInt(updateNombre))) {
 					fc = f;
 					break;
@@ -156,7 +157,7 @@ public class menuFacturas {
 			fc.setFecha(null);
 			
 			
-			com.mitienda.spring.models.Clientes cl = new com.mitienda.spring.models.Clientes();
+			Clientes cl = new Clientes();
 
 			facturasLista = ctrl.list();
 			for (int i = 0; i < facturasLista.size(); i++) {
@@ -186,7 +187,7 @@ public class menuFacturas {
 		if (facturasLista.isEmpty()) {
 			System.out.println("Lista vac�a no tengo nada que borrar espabila");
 		} else {
-			com.mitienda.spring.models.Factura fc = new com.mitienda.spring.models.Factura();
+			Factura fc = new Factura();
 			String deleteando;
 			System.out.println("que quieres borrar ");
 			facturasLista = ctrl.list();

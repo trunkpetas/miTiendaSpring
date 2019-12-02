@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 import com.mitienda.spring.controllers.CategoryController;
 import com.mitienda.spring.controllers.ProductController;
+import com.mitienda.spring.models.Categoria;
+import com.mitienda.spring.models.Producto;
 /*
 import src.models.Categoria;
 import src.models.Producto;
@@ -20,8 +22,8 @@ public class menuProductos {
 	ProductController ctrl = ProductController.getInstance();
 	CategoryController ctrl1 = CategoryController.getInstance();
 	public Scanner keyboard = new Scanner(System.in);
-	List<com.mitienda.spring.models.Producto> productosLista = new ArrayList<>();
-	List<com.mitienda.spring.models.Categoria> categoriasLista = new ArrayList<>();
+	List<Producto> productosLista = new ArrayList<>();
+	List<Categoria> categoriasLista = new ArrayList<>();
 
 	public menuProductos() {
 
@@ -69,12 +71,12 @@ public class menuProductos {
 	}
 
 	public void crearPrd() {
-		com.mitienda.spring.models.Producto pro = new com.mitienda.spring.models.Producto();
+		Producto pro = new Producto();
 		System.out.println("Teclee el nombre del nuevo producto :");
 		String productoNuevo = keyboard.nextLine();
 		pro.setNombre(productoNuevo);
 
-		com.mitienda.spring.models.Categoria cat = new com.mitienda.spring.models.Categoria();
+		Categoria cat = new Categoria();
 		categoriasLista = ctrl1.list();
 		for (int i = 0; i < categoriasLista.size(); i++) {
 			System.out.println(categoriasLista.get(i).getId() + " " + categoriasLista.get(i));
@@ -97,7 +99,7 @@ ctrl.save(pro);
 	}
 
 	public void readPrd() {
-		com.mitienda.spring.models.Producto prd = new com.mitienda.spring.models.Producto();
+		Producto prd = new Producto();
 		productosLista = ctrl.list();
 
 		if (productosLista.isEmpty()) {
@@ -115,7 +117,7 @@ ctrl.save(pro);
 	public void actualizaPrdo() {
 		
 		
-		com.mitienda.spring.models.Producto prd = new com.mitienda.spring.models.Producto();
+		Producto prd = new Producto();
 		productosLista = ctrl.list();
 		prd = null;
 		if (productosLista.isEmpty()) {
@@ -135,8 +137,8 @@ ctrl.save(pro);
 			updateNombre = keyboard.nextLine();
 			//(Producto) productosLista.get(Integer.parseInt(updateNombre));
 			
-			for (com.mitienda.spring.models.Producto dbObject : productosLista) {
-				com.mitienda.spring.models.Producto p = (com.mitienda.spring.models.Producto) dbObject;
+			for (Producto dbObject : productosLista) {
+				Producto p = (Producto) dbObject;
 				if (p.getId().equals(Integer.parseInt(updateNombre))) {
 					prd = p;
 					break;
@@ -152,7 +154,7 @@ ctrl.save(pro);
 			nombre = keyboard.nextLine();
 			prd.setNombre(nombre);
 			
-			com.mitienda.spring.models.Categoria cat = new com.mitienda.spring.models.Categoria();
+			Categoria cat = new Categoria();
 			categoriasLista = ctrl1.list();
 			for (int i = 0; i < categoriasLista.size(); i++) {
 				System.out.println(categoriasLista.get(i).getId() + " " + categoriasLista.get(i));
@@ -186,7 +188,7 @@ ctrl.save(pro);
 			System.out.println("Lista vac�a no tengo nada que borrar espabila");
 		} else {
 
-			com.mitienda.spring.models.Producto prd = new com.mitienda.spring.models.Producto();
+			Producto prd = new Producto();
 			String deleteando;
 			System.out.println("que quieres borrar ");
 			productosLista = ctrl.list();
